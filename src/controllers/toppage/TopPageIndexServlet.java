@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 // @WebServlet に /index.html とファイル名みたいなものを入れたのは
 // http://localhost:8080 という記述のみでトップページにアクセスできるようにするためです
 // サイトのトップページのURLについて  スラッシュ終わりのURLにアクセスすると、自動でindex.htmlを探して画面に表示してくれるため
-
+// Tomcatが起動したことを確認したらブラウザを開いて http://localhost:8080/daily_report_system/ とだけ入力してエンターキーを押します
+// スラッシュ（/）終わりのURLにアクセスします アクセスする際のURLはスラッシュ（/）終わり
 @WebServlet("/index.html")
 public class TopPageIndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     public TopPageIndexServlet() {
         super();
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
