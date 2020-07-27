@@ -65,7 +65,7 @@ public class PropertiesListener implements ServletContextListener {
             Iterator<String> pit = properties.stringPropertyNames().iterator();
             while(pit.hasNext()) {
                 String pname = pit.next();
-                context.setAttribute(pname, properties.getProperty(pname));  // 1つずつアプリケーションスコープに登録する
+                context.setAttribute(pname, properties.getProperty(pname));  // 1行ずつアプリケーションスコープに登録する
             }
         } catch(FileNotFoundException e) {
         } catch(IOException e) {}

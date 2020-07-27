@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+//  さまざまなコントローラで使えるよう、ユーティリティクラスとしてDBUtilクラスを作成してます
+//  このDBUtilクラスは  DAOに相当するクラスです
 public class DBUtil {
     private static final String PERSISTENCE_UNIT_NAME = "daily_report_system";
     private static EntityManagerFactory emf;
