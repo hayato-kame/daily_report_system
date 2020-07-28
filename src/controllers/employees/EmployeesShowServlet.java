@@ -21,6 +21,12 @@ public class EmployeesShowServlet extends HttpServlet {
         super();
     }
 
+    /**
+     * index.jsp から
+     * aタグのリンクで送られくるので urlにくっついて、送られてくるので、GET送信
+     * だから、doGetに書く
+     *
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
