@@ -44,8 +44,8 @@ public class EmployeesEditServlet extends HttpServlet {
         // セッションIDをセッションスコープから取得して、それをリクエストスコープに保存する
         request.setAttribute("_token", request.getSession().getId());
 
-        // Employeeインスタンスの id だけは、後で、削除のサーブレットでも使えるようにセッションスコープに置いておく
-        // もし、削除するとなると、セッションスコープに保存しておくことで、EmployeesDestroyServletサーブレットの方でも呼び出せるので、
+        // Employeeインスタンスの id だけは、後で、更新と削除のサーブレットでも使えるようにセッションスコープに置いておく
+        // もし、削除するとなると、セッションスコープに保存しておくことで、EmployeesUpdateServlet  EmployeesDestroyServletサーブレットの方でも呼び出せるので、
         // Employeeインスタンスの id を セッションスコープに置いておきます。
         request.getSession().setAttribute("employee_id", e.getId());
 
