@@ -127,7 +127,7 @@ public class LoginServlet extends HttpServlet {
             // リクエストスコープに "hasError" というキー（名前）で、 true の値を保存する
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
-            request.setAttribute("code", code);
+            request.setAttribute("code", code);  // 社員番号のプロパティです
 
             //   Viewとして /WEB-INF/views/login/login.jsp  へフォワード
 

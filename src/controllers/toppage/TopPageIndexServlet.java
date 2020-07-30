@@ -25,6 +25,13 @@ public class TopPageIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // セッションスコープから "flush" のキーで取り出してきた(情報を取得してくるだけで、セッションスコープには残ってる)Object型のオブジェクトが nullでなければ、それをリクエストスコープに保存し直す
+        if(request.getSession().getAttribute("flush") != null){
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
+            // 使い終わった後は、セッションスコープに残しておくのは悪いので、積極的に削除する
+            request.getSession().removeAttribute("flush");
+        }
+// リクエストスコープにフラッシュメッセージを設定しましたので、フラッシュメッセージがセットされていたら、そのメッセージをビューで表示する
         // ビューのindex.jspへ フォワードする
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/index.jsp");
         rd.forward(request, response);
