@@ -15,6 +15,19 @@ import javax.servlet.http.HttpSession;
 
 import models.Employee;
 
+
+/**
+LoginFilterの @WebFilterの前に //を入れてコメントアウトしてください。
+その後、サーバを再度起動し直し、
+http://localhost:8080/daily_report_system/employees/new
+から新規で従業員を作成してください。
+（その折、ユーザ名とパスワードはメモしておき、権限は管理者としておきましょう）
+従業員の作成が済んだら、LoginFilterの @WebFilterの前の //を削除して、もとに戻した腕で、
+サーバを再起動しましょう。
+その後、新しく追加したユーザ名／パスワードでログインできるかどうか、ご確認ください。
+
+*/
+
 @WebFilter("/*")
 public class LoginFilter implements Filter {
 
